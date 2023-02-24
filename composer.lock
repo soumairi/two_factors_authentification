@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e71aa9b06b9cda30620373e8f1e2718",
+    "content-hash": "1dc7ccb3c855ce85688ea972dd4686ef",
     "packages": [
         {
             "name": "brick/math",
@@ -3004,6 +3004,65 @@
                 }
             ],
             "time": "2023-01-12T18:13:24+00:00"
+        },
+        {
+            "name": "soumairi/domain-checker",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/soumairi/laravel-domain-checker.git",
+                "reference": "3733fa495ffd45d8f1b9ab03b1b4175834b646e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/soumairi/laravel-domain-checker/zipball/3733fa495ffd45d8f1b9ab03b1b4175834b646e8",
+                "reference": "3733fa495ffd45d8f1b9ab03b1b4175834b646e8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0  || ^10.0",
+                "php": "^7.2 | ^7.3 | ^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Soumairi\\DomainChecker\\DomainCheckerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Soumairi\\DomainChecker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mouhssine Soumairi",
+                    "email": "soumairi@gmail.com"
+                },
+                {
+                    "name": "Hamza Ouhamou",
+                    "email": "hamzaouhamou@gmail.com"
+                }
+            ],
+            "description": "domain-checker is a package to check domains for an extra security layer",
+            "keywords": [
+                "allowed domains",
+                "domain checker",
+                "framework",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/soumairi/laravel-domain-checker/issues",
+                "source": "https://github.com/soumairi/laravel-domain-checker/tree/main"
+            },
+            "time": "2023-02-24T13:28:10+00:00"
         },
         {
             "name": "symfony/console",
@@ -7868,7 +7927,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "soumairi/domain-checker": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

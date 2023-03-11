@@ -40,6 +40,32 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="under_control" class="col-md-4 col-form-label text-md-end">{{ __('e-mail du contrôleur') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="under_control" type="email" class="form-control @error('under_control') is-invalid @enderror" name="under_control" value="{{ old('under_control') }}"  autocomplete="email">
+
+                                @error('under_control')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="authorized_ip" class="col-md-4 col-form-label text-md-end">{{ __('IP auorisée') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="authorized_ip" type="text" class="form-control @error('authorized_ip') is-invalid @enderror" name="authorized_ip" value="{{ old('authorized_ip') }}">
+
+                                @error('authorized_ip')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

@@ -5,9 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Session;use Illuminate\Support\Facades\Log;
-
-class Check2FA
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+class CheckIp
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,13 @@ class Check2FA
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Session::has('user_2fa')) {
-            return redirect()->route('2fa.index');
+        if(auth()->user()->authorized_ip && auth()->user()->authorized_ip==$request->getClientIp()){
+            return $next($request);
+        
+        }else{
+            Session::flush();
+            Auth::logout();
+            return redirect()->route('welcome');
         }
-        return $next($request);
     }
 }
